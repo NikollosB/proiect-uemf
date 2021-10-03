@@ -10,7 +10,7 @@ import LandingButton from '../components/LandingButton'
 import EnSVG from '../assets/en.svg';
 import RoSVG from '../assets/ro.svg';
 
-const LanguageBar = styled.div`
+export const LanguageBar = styled.div`
     display: flex;
     width: 0.4rem;
     justify-content: space-between;
@@ -20,7 +20,7 @@ const LanguageBar = styled.div`
     right: 0.5rem;
 `;
 
-const IMG = styled.div`
+export const IMG = styled.div`
     display: block;
     background-image: url(${props => props.imgSrc});
     background-size: contain;
@@ -34,7 +34,7 @@ const IMG = styled.div`
 
 
 
-function LandingPage() {
+function LandingPage({language, setLanguage}) {
 
     const history = useHistory();
 
@@ -42,17 +42,29 @@ function LandingPage() {
         history.push('/about');
     }
 
+    const handleLangRoChange = () => {
+        setLanguage('ro');
+        localStorage.setItem('lang', 'ro');
+    }
 
-    return <Background>
+    const handleLangEnChange = () => {
+        setLanguage('en');
+        localStorage.setItem('lang', 'en');
+    }
+
+
+    return <Background style={{overflow: 'hidden'}}>
         <LanguageBar>
             <IMG 
-                imgSrc={EnSVG} />
+                imgSrc={EnSVG} 
+                onClick={handleLangEnChange}/>
             <IMG 
-                imgSrc={RoSVG} />
+                imgSrc={RoSVG}
+                onClick={handleLangRoChange}/>
 
         </LanguageBar>
 
-        <div style={{position: 'absolute', right: '0.25rem', top: '35%',}}>
+        <div style={{position: 'absolute', right: '48px', top: '35%',}}>
         <Container>
             <Heading 
                 fZ='1rem'
@@ -64,10 +76,17 @@ function LandingPage() {
                 fW='normal'>
                 "Raisa Pacalo"
             </Heading>
-            <LandingButton
-                onClick={handleClick}>
-                сătre website
-            </LandingButton>
+            {
+                language == 'ro' ?  <LandingButton
+                                        onClick={handleClick}>
+                                        сătre website
+                                    </LandingButton> :
+
+                                     <LandingButton
+                                        onClick={handleClick}>
+                                        to the website
+                                    </LandingButton>
+            }
         </Container>
         </div>
     </Background>
