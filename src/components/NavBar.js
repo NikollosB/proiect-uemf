@@ -1,5 +1,5 @@
 import React from 'react';
-import {useHistory, useLocation} from 'react-router-dom';
+import {useHistory, useLocation, Link} from 'react-router-dom';
 import styled from 'styled-components';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
@@ -53,7 +53,6 @@ const CustomIMG = styled(IMG)`
     height: 20px;
 `;
 
-
 function NavBar({language, setLanguage}) {
 
     const history = useHistory();
@@ -73,7 +72,8 @@ function NavBar({language, setLanguage}) {
       <AppBar position="fixed" sx={{height: '64px'}}>
         {language == 'ro' ? <MenuToolbar>
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/about')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/about' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -82,7 +82,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/greeting')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/greeting' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -91,7 +92,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/conference')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/conference' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -100,7 +102,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/register')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/register' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -109,7 +112,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/partners')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/partners' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -118,7 +122,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/materials')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/materials' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -127,7 +132,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/resolution')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/resolution' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -155,7 +161,8 @@ function NavBar({language, setLanguage}) {
 
         <MenuToolbar>
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/about')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/about' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -164,7 +171,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/greeting')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/greeting' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -173,7 +181,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/conference')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/conference' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -182,7 +191,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/register')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/register' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -191,7 +201,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/partners')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/partners' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -200,7 +211,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/materials')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/materials' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>
@@ -209,7 +221,8 @@ function NavBar({language, setLanguage}) {
           </MenuItem>
 
           <MenuItem 
-             color="inherit">
+             color="inherit"
+             onClick={() => history.push('/resolution')}>
                 <MenuText
                     variant='p'
                     sx={location.pathname == '/resolution' ? {borderTop: '2px solid white'} : {borderTop: 'none'}}>

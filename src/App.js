@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Link, Route, Switch, Redirect} from 'react-rout
 
 import LandingPage from './views/LandingPage';
 import About from './views/About';
+import FormPage from './views/FormPage';
 import GlobalStyle from './components/GlobalStyle';
 
 const defaultLanguage = () => {
@@ -21,6 +22,9 @@ function App() {
       <Switch>
           <Route exact path='/about'>
                 <About language={language} setLanguage={setLanguage} />
+          </Route>
+          <Route exact path='/register'>
+              <FormPage language={language} setLanguage={setLanguage} />
           </Route>
           <Route exact path='/'>
               <LandingPage language={language} setLanguage={setLanguage} />
