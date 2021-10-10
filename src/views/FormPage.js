@@ -4,17 +4,14 @@ import FormControl from '@mui/material/FormControl';
 import TextField from '@mui/material/TextField'
 import {makeStyles} from '@mui/styles'
 import Button from '@mui/material/Button'
+import XMLParser from 'react-xml-parser';
+
+
 
 import NavBar from '../components/NavBar'
 import Background from '../components/Background'
 import Container from '../components/Container';
 import Heading from '../components/Heading';
-
-
-const SHEET_ID = '1zE596bTE-l1O7aMgWu3XCH7YMF32Ut-9-Urzg8vnFtI';
-const ACCESS_TOKEN = 'ya29.a0ARrdaM-rRp99nFZtGUp4JRlXvyp19uRN_9NE4B1GW95aC3GlcSiXQ0WE6S09zggMg3RvddVcFoo7urAaGfu4-MSmOxHBnuD24-0BCRvRqf_96v1rrE3DlAkeu2mqZTW5oJkc5ZLcVqZschcAEt6tm0iyx8OH';
-
-
 
 
 
@@ -27,6 +24,14 @@ const defaultUser = {
         institution: '',
         tel: ''
     };
+
+
+    
+
+
+
+
+
 
 
 const useStyles = makeStyles({
@@ -53,45 +58,22 @@ function FormPage({language, setLanguage}) {
     const [emails, setEmails] = useState([]);
 
 
+    useEffect(() => {
+        axios.get('/assets/Users.xml', {
+        "Content-Type": "application/xml; charset=utf-8"
+       }).then(res => 
+        {
+        const jsonDataFromXml = new XMLParser().parseFromString(res.data);
+        console.log(jsonDataFromXml);
+        }).catch(err => console.log(err));
 
-    const updateSheetValues = () => {
-    axios({
-      url: `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}:batchUpdate`,
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        //update this token with yours. 
-        Authorization: `Bearer ${ACCESS_TOKEN}`,
-      },
-      body: JSON.stringify({
+    }, [])
 
-        requests: [{
-          repeatCell: {
-            range: {
-              startColumnIndex: 0,
-              endColumnIndex: 1,
-              startRowIndex: 0,
-              endRowIndex: 1,
-              sheetId: 0
-            },
-            cell: {
-              userEnteredValue: {
-                "numberValue": 10
-              },
-            },
-            fields: "*"
-          }
-        }]
-
-      })
-    })
-  }
+          
 
 
 
-
-
-
+   
     const handleFNameChange = (event) => {
         return setUser({
             ...user,
@@ -140,6 +122,7 @@ function FormPage({language, setLanguage}) {
             tel: event.target.value
         })
     }
+
 
 
     const classes = useStyles();
@@ -235,8 +218,7 @@ function FormPage({language, setLanguage}) {
                 <Button 
                     variant='contained'
                     sx={{fontSize: '0.13rem'}}
-                    type='submit'
-                    onClick={() => updateSheetValues()}>
+                    type='submit'>
                     Înregistrează
                 </Button>
 
