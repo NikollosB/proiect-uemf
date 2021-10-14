@@ -7,6 +7,7 @@ import FormPage from './views/FormPage';
 import Conference from './views/Conference'
 import Materials from './views/Materials'
 import GlobalStyle from './components/GlobalStyle';
+import Resolution from './views/Resolution'
 
 const defaultLanguage = () => {
     if(localStorage.getItem('lang'))
@@ -36,6 +37,9 @@ function App() {
           </Route>
           <Route exact path='/'>
               <LandingPage language={language} setLanguage={setLanguage} />
+          </Route>
+          <Route exact path='/resolution'>
+              <Resolution language={language} setLanguage={setLanguage} />
           </Route>
       </Switch>
     </Router>

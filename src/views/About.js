@@ -66,6 +66,7 @@ const TheText = styled.p`
     font-size: 0.12rem;
     color: #284D97;
     line-height: 150%;
+    text-align: justify;
 
     :first-letter {
         font-family: Italianno, sans-serif;
@@ -126,7 +127,7 @@ function About({language, setLanguage}) {
             </TextBox>
         </Section>
 
-        <Section style={{backgroundColor: '#8dbbff'}}>
+        <Section style={{backgroundColor: '#cee1fd'}}>
             <TextBox>
                 <TheText>
                      Excelența, calitatea și performanța sunt doar câteva din 
@@ -139,7 +140,7 @@ function About({language, setLanguage}) {
             </TextBox>
         </Section>
 
-        <Section style={{backgroundColor: '#76abfa'}}>
+        <Section style={{backgroundColor: '#9dc3fb'}}>
             <TextBox>
                 <TheText>
                      Managementul modern, autentic şi participativ pe care se axează 
@@ -159,7 +160,7 @@ function About({language, setLanguage}) {
         </Section>
 
 
-        <Section style={{backgroundColor: '#5d9cfa',paddingBottom: '100px', clipPath: 'polygon(0 0, 100% 0, 100% 75%, 0 100%)'}}>
+        <Section style={{backgroundColor: '#6ca4f9',paddingBottom: '100px', clipPath: 'polygon(0 0, 100% 0, 100% 75%, 0 100%)'}}>
             <TextBox>
                 <TheText>
                      Formarea profesională și creşterea în carieră a cadrelor 
@@ -385,7 +386,7 @@ function About({language, setLanguage}) {
             </TextBox>
         </Section>
 
-        <Section style={{backgroundColor: '#8dbbff'}}>
+        <Section style={{backgroundColor: '#cee1fd'}}>
             <TextBox>
                 <TheText>
                      Excellence, quality and performance are just a few of the
@@ -398,7 +399,7 @@ function About({language, setLanguage}) {
             </TextBox>
         </Section>
 
-        <Section style={{backgroundColor: '#76abfa'}}>
+        <Section style={{backgroundColor: '#9dc3fb'}}>
             <TextBox>
                 <TheText>
                      Modern, authentic and participatory management on which it focuses
@@ -418,7 +419,7 @@ function About({language, setLanguage}) {
         </Section>
 
 
-        <Section style={{backgroundColor: '#5d9cfa',paddingBottom: '100px', clipPath: 'polygon(0 0, 100% 0, 100% 75%, 0 100%)'}}>
+        <Section style={{backgroundColor: '#6ca4f9',paddingBottom: '100px', clipPath: 'polygon(0 0, 100% 0, 100% 75%, 0 100%)'}}>
             <TextBox>
                 <TheText>
                      Favored vocational training and career growth of staff

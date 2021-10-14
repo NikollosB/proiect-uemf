@@ -45,13 +45,13 @@ const Sect = styled.section`
 
 const Sect2 = styled(Sect)`
    
-    // height: 140vh;
+   
     
 `;
 const CCont = styled.div`
 
 width: 65vw;
-text-align: center;
+text-align: justify;
 margin-top: 50px;
 
 `;
@@ -209,7 +209,7 @@ return <Overlay>
                                     <Deft>
                                     Sesiunea I – Program științific (rapoarte în plen) partenerii internaționali (România, Franța, Ucraina)
                                     </Deft>
-                                    <Deft>
+                                     <Deft>
                                     Sesiunea II – Program științific (rapoarte în plen) partenerii naționali (USMF „N.Testemițanu”, UST, USM, USP „Ion Creangă”)
                                     </Deft>
                                     <Deft>
